@@ -1,5 +1,5 @@
 ﻿using System;
-namespace System.Extensions
+namespace System
 {
     /// <summary>
     /// 整型扩展

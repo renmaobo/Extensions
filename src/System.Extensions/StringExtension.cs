@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
-namespace System.Extensions
+namespace System
 {
     /// <summary>
     /// 字符串扩展
@@ -31,6 +32,17 @@ namespace System.Extensions
         public static byte[] ToBytes(this string value, Encoding encoding)
         {
             return encoding.GetBytes(value);
+        }
+
+        /// <summary>
+        /// 序列化为对象
+        /// </summary>
+        /// <typeparam name="TData">对象类型</typeparam>
+        /// <param name="value">json字符串</param>
+        /// <returns></returns>
+        public static TData ConvertTo<TData>(this string value)
+        {
+            return JsonConvert.DeserializeObject<TData>(value);
         }
 
         /// <summary>
