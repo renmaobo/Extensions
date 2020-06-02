@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -20,7 +21,10 @@ namespace System
         /// <returns></returns>
         public static string ToMD5String(this string value)
         {
-            return null;
+            byte[] bytes = Encoding.Default.GetBytes(value);
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] output = md5.ComputeHash(bytes);
+            return BitConverter.ToString(output);
         }
 
         /// <summary>
