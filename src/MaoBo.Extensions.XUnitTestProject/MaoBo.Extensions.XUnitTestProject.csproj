@@ -13,4 +13,9 @@
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\System.Extensions\System.Extensions.csproj" />
+    <ProjectReference Include="..\System.Net.Extensions\System.Net.Extensions.csproj" />
+  </ItemGroup>
+
 </Project>

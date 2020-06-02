@@ -18,8 +18,8 @@ namespace System
         /// <returns></returns>
         public static long GetCurrentTimestamp(this DateTime currentDateTime)
         {
-            TimeSpan timeSpan = (currentDateTime - new DateTime(1970, 1, 1, 0, 0, 0).ToLocalTime());
-            return (long)timeSpan.TotalSeconds;
+            DateTime _1970 = new DateTime(1970, 1, 1, 0, 0, 0).ToLocalTime();
+            return currentDateTime.Ticks - _1970.Ticks;
         }
     }
 }
